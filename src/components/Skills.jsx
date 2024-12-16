@@ -22,6 +22,8 @@ const Skills = () => {
       <button id="delete_skill" onClick={() => dispatch(deleteSkill(skill))}>
         Delete Skill
       </button>
+      <button id="next" onClick={handleNext}>Next</button>
+
     </div>
   );
 };

@@ -26,6 +26,8 @@ const Projects = () => {
       <button id='delete' onClick={()=> dispatch(deleteProject(project))}>
         Delete Project
       </button>
+      <button id="next" onClick={handleNext}>Next</button>
+
     </div>
   )
 };

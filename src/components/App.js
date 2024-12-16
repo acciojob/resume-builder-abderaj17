@@ -40,7 +40,7 @@ const App = () => {
   }
   return (
     <div className="App">
-      <h1>Resume Builder</h1>
+      <h1>RESUME GENERATOR</h1>
       {renderPage()}
 
       <div className="navigation-buttons">

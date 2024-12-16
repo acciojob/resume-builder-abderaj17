@@ -20,7 +20,7 @@ const Profile = () => {
         };
   return (
     <div>
-   <h2>Profile Section</h2>
+   <h4>Add your profile details</h4>
    <label htmlFor="">First Name:</label>
    <input type='text' name='fname' onChange={handleChange}/>
 
@@ -35,6 +35,9 @@ const Profile = () => {
 
    <label htmlFor="">Image URL:</label>
    <input type="text " name='url' onChange={handleSave}/>
+
+   <button id="next" onClick={handleNext}>Next</button>
+
 
    <button id='save_continue' onClick={handleSave}>Save and Continue</button>
     </div>

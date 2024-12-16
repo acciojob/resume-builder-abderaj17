@@ -58,6 +58,8 @@ const Education = () => {
               </li>
             ))}
           </ul>
+          <button id="next" onClick={handleNext}>Next</button>
+
         </div>
       );
     };

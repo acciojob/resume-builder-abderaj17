@@ -16,6 +16,8 @@ const Social = () => {
      <button id='add_social' onClick={()=> dispatch(addSocial(social))}>
         Add Social Link
      </button>
+     <button id="next" onClick={handleNext}>Next</button>
+
     </div>
   )
 }
