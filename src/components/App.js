@@ -23,15 +23,15 @@ const App = () => {
   const renderPage = ()=>{
     switch(currentPage){
       case 1 :
-        return <Profile />;
+        return <Profile handleNext={handleNext}/>;
       case 2:
-        return <Education />;
+        return <Education handleNext={handleNext}/>;
       case 3:
-        return <Skills />;
+        return <Skills handleNext={handleNext}/>;
       case 4:
-        return <Projects />
+        return <Projects handleNext={handleNext}/>
       case 5: 
-      return <Social />;
+      return <Social handleNext={handleNext}/>;
       case 6:
         return <Final />;
       default :

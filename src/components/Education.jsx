@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addEducation, deleteEducation } from '../redux/action'
-const Education = () => {
+import '../styles/App.css'
+const Education = ({handleNext}) => {
  
     const [form, setForm] = useState({
         courseName: "",
@@ -17,12 +18,12 @@ const Education = () => {
         dispatch(addEducation(form));
         setForm({ courseName: "", completionYear: "", college: "", percentage: "" });
       };
-      const handleNext = ()=>{
-    alert("Proceeding to the next step...");
-      }
+    //   const handleNext = ()=>{
+    // alert("Proceeding to the next step...");
+    //   }
     
       return (
-        <div>
+        <div className="education">
           <h2>Add your Education Details</h2>
           <input
             name="courseName"

@@ -1,38 +1,74 @@
-import React, { useState } from 'react'
-import { addProject, deleteProject } from '../redux/action'
-import { useDispatch } from 'react-redux'
-const Projects = () => {
-    const dispatch = useDispatch();
-    const [project, setProject] = useState({
-        projectName : "",
-        teckStack: "",
-        description: "",
-    });
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addProject, deleteProject } from "../redux/action";
 
-    const handleChange = (e)=>{
-        setProject({...project, [e.target.name]:e.target.value});
+const Projects = ({ handleNext }) => {
+  const dispatch = useDispatch();
+  const projects = useSelector((state) => state.projects);
+
+  const [project, setProject] = useState({
+    projectName: "",
+    teckStack: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setProject({ ...project, [e.target.name]: e.target.value });
+  };
+
+  const handleAddProject = () => {
+    if (project.projectName.trim() && project.teckStack.trim()) {
+      dispatch(addProject(project));
+      setProject({ projectName: "", teckStack: "", description: "" });
+    } else {
+      alert("Please fill in all required fields.");
     }
-    const handleNext = () =>{
-        alert("Proceeding to the nextstep...");
-    }
+  };
+
   return (
     <div>
-      <h2>Add your Mini Projects</h2>
-      <label htmlFor="">Project Name:</label>
-      <input type="text" name='projectName' onChange={handleChange} />
+      <h2 data-testid="projects-heading">Add your Mini Projects</h2>
 
-      <label htmlFor="">Tech Stack:</label>
-      <input type="text" name='teckStack' onChange={handleChange} />
+      <label>Project Name:</label>
+      <input
+        type="text"
+        name="projectName"
+        placeholder="Project Name"
+        data-testid="project-name-input"
+        value={project.projectName}
+        onChange={handleChange}
+      />
 
-      <button id='add_project' onClick={()=> dispatch(addProject(project))}>Add Project</button>
+      <label>Tech Stack:</label>
+      <input
+        type="text"
+        name="teckStack"
+        placeholder="Tech Stack"
+        data-testid="tech-stack-input"
+        value={project.teckStack}
+        onChange={handleChange}
+      />
 
-      <button id='delete' onClick={()=> dispatch(deleteProject(project))}>
-        Delete Project
+      <button id="add_project" onClick={handleAddProject}>
+        Add Project
       </button>
-      <button id="next" onClick={handleNext}>Next</button>
 
+      <ul>
+        {projects.map((proj, index) => (
+          <li key={index}>
+            {proj.projectName} - {proj.teckStack}
+            <button id="delete" onClick={() => dispatch(deleteProject(index))}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      <button id="next" onClick={handleNext}>
+        Next
+      </button>
     </div>
-  )
+  );
 };
 
-export default Projects
+export default Projects;

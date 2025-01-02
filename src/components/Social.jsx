@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { addSocial } from '../redux/action'
 import { useDispatch } from 'react-redux'
-const Social = () => {
+const Social = ({handleNext}) => {
     const dispatch = useDispatch();
     const [social, setSocial] = useState("");
 
-    const handleNext = ()=>{
-        alert("Proceeding to the next step...");
-    }
+    // const handleNext = ()=>{
+    //     alert("Proceeding to the next step...");
+    // }
 
   return (
     <div>

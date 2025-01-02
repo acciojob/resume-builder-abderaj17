@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import {updateProfile} from '../redux/action';
 import { useDispatch } from 'react-redux';
-const Profile = () => {
+import '../styles/App.css';
+// import 'C:\Users\agrah\OneDrive\Desktop\assignments\resume-builder-abderaj17\src\styles\App.css';
+const Profile = ({handleNext}) => {
     const dispatch = useDispatch();
     const [profile, setProfile] = useState({
         fname: "",
@@ -18,11 +20,11 @@ const Profile = () => {
         const handleSave = ()=>{
             dispatch(updateProfile(profile));
         };
-        const handleNext = ()=>{
-          alert("Nevigate to the next step...")
-        }
+        // const handleNext = ()=>{
+        //   alert("Nevigate to the next step...")
+        // }
   return (
-    <div>
+    <div className='profile'>
    <h4>Add your profile details</h4>
    <label htmlFor="">First Name:</label>
    <input type='text' name='fname' onChange={handleChange}/>

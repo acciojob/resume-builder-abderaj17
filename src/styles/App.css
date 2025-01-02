@@ -1,4 +1,18 @@
+.education{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.profile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.profile input{
+  margin: 0 auto;
+  text-align: center;
+}
 .App {
     text-align: center;
     padding: 20px;
