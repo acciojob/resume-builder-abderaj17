@@ -12,6 +12,9 @@ const Projects = () => {
     const handleChange = (e)=>{
         setProject({...project, [e.target.name]:e.target.value});
     }
+    const handleNext = () =>{
+        alert("Proceeding to the nextstep...");
+    }
   return (
     <div>
       <h2>Projects Section</h2>

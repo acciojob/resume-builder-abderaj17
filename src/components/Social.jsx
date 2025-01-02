@@ -5,6 +5,10 @@ const Social = () => {
     const dispatch = useDispatch();
     const [social, setSocial] = useState("");
 
+    const handleNext = ()=>{
+        alert("Proceeding to the next step...");
+    }
+
   return (
     <div>
      <h2>Social Media Links</h2>

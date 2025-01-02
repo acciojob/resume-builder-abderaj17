@@ -18,6 +18,9 @@ const Profile = () => {
         const handleSave = ()=>{
             dispatch(updateProfile(profile));
         };
+        const handleNext = ()=>{
+          alert("Nevigate to the next step...")
+        }
   return (
     <div>
    <h4>Add your profile details</h4>

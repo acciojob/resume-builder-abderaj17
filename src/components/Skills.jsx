@@ -6,6 +6,9 @@ const Skills = () => {
     const dispatch = useDispatch();
   const [skill, setSkill] = useState("");
 
+  const handleNext = ()=>{
+    alert("Proceeding to the next step...");
+  }
   return (
     <div>
       <h2>Skills Section</h2>
@@ -29,4 +32,4 @@ const Skills = () => {
 };
 
 
-export default Skills
+export default Skills;
