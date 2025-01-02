@@ -23,7 +23,7 @@ const Education = () => {
     
       return (
         <div>
-          <h2>Education Section</h2>
+          <h2>Add your Education Details</h2>
           <input
             name="courseName"
             placeholder="Course Name"

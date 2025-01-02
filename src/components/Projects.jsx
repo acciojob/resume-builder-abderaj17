@@ -17,7 +17,7 @@ const Projects = () => {
     }
   return (
     <div>
-      <h2>Projects Section</h2>
+      <h2>Add your Mini Projects</h2>
       <label htmlFor="">Project Name:</label>
       <input type="text" name='projectName' onChange={handleChange} />
 

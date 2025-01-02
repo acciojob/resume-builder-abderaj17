@@ -15,7 +15,7 @@ const Skills = () => {
       <input
         type="text"
         placeholder="Add Skill"
-        name="skill"
+      name='skill'
         value={skill}
         onChange={(e) => setSkill(e.target.value)}
       />
